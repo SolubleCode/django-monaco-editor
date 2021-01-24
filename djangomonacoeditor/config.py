@@ -1,11 +1,13 @@
+from django.conf import settings
+
 WEB_EDITOR_STATICFILES = {
-    'monaco': {
-        'js': (
-            '/static/monaco/loader.js',
-            '/static/djangomonacoeditor/monaco/monaco.config.js',
+    "monaco": {
+        "js": (
+            f"{settings.STATIC_URL}monaco/loader.js",
+            f"{settings.STATIC_URL}djangomonacoeditor/monaco/monaco.config.js",
         ),
-        'css': {
-            'screen': ("/static/djangomonacoeditor/monaco/monaco.custom.css", )
+        "css": {
+            "screen": (f"{settings.STATIC_URL}djangomonacoeditor/monaco/monaco.custom.css", )
         }
     }
 }
