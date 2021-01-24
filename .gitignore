@@ -1,0 +1,13 @@
+/__pycache__/
+*.py[cod]
+*$py.class
+*.sqlite3
+*.egg-info
+
+.vscode/
+
+.DS_Store
+
+dist/
+build/
+Makefile
