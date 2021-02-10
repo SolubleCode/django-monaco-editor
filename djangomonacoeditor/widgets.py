@@ -1,5 +1,4 @@
 from django import forms
-from .config import WEB_EDITOR_STATICFILES
 
 class MonacoEditorWidget(forms.Textarea):
 
@@ -16,6 +15,10 @@ class MonacoEditorWidget(forms.Textarea):
         return context
 
     class Media:
-        staticfiles = WEB_EDITOR_STATICFILES['monaco']
-        js = staticfiles['js']
-        css = staticfiles['css']
+        js = [
+            "monaco/loader.js",
+            "djangomonacoeditor/monaco.config.js",
+        ]
+        css = {
+            "screen": ("djangomonacoeditor/monaco.custom.css", )
+        }
